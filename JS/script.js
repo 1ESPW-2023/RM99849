@@ -17,7 +17,7 @@ function soma() {
     let n2 = 5
     console.log(n1 + n2)
 }
-*/
+
  
 //convertendo node.list em array 
 const arrayElement = [document.querySelectorAll("li")];
@@ -27,4 +27,23 @@ arrayElement.map( (el,key)=>{
         el.textContent = `${key+1} [item-10]`
     }
 } )
+
+*/
+let tmp = 0;
+
+
+function mudaCor() {
+    let r = Math.ceil(Math.random()*255);
+    let g = Math.ceil(Math.random()*255);
+    let b = Math.ceil(Math.random()*255);
+    
+    const elemento = [...document.getElementsByClassName("conteudo")];
+    elemento.forEach( (el)=>{
+        el.style.backgroundColor = `rgb(${r},${g},${b})`;
+    } )
+
+   tmp = setTimeout(mudaCor, 1000);
+
+}
+
 
