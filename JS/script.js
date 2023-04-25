@@ -1,34 +1,44 @@
-/*
-//Exemplo de Funções
-const divElement = document.getElementById("div-box")
+// //Exemplo de Funções
+// const divElement = document.getElementById("div-box")
 
-// divElement.addEventListener("click", ()=>{
-//     console.log(divElement);
-// });
+// // divElement.addEventListener("click", ()=>{
+// //     console.log(divElement);
+// // });
 
-divElement.addEventListener("click", mostraElemento);
+// divElement.addEventListener("click", mostraElemento);
 
-function mostraElemento() {
-    console.log(divElement)
-}
 
-function soma() {
-    let n1 = 10
-    let n2 = 5
-    console.log(n1 + n2)
-}
+// function mostraElemento() {
+//     console.log(divElement)
+// }
 
+// function soma() {
+//     let n1 = 10
+//     let n2 = 5
+//     console.log(n1 + n2)
+// }
  
-//convertendo node.list em array 
-const arrayElement = [document.querySelectorAll("li")];
 
-arrayElement.map( (el,key)=>{
-    if(el.textContent.indexOf("1",0)){
-        el.textContent = `${key+1} [item-10]`
-    }
-} )
+// //Recuperando elementos do HTML com querySelector
+// const liElements = document.querySelector("#item");
+// console.log(liElements);
 
-*/
+
+// //Recuperando elementos do HTML com querySelectorAll
+// const liElements = document.querySelectorAll("li");
+// //CONVERTENDO NODE LIST EM ARRAY COM SPREAD
+// const arrayElements = [...liElements];
+// console.log(arrayElements);
+
+//CONVERTENDO NODE LIST EM ARRAY COM SPREAD
+// const arrayElements = [...document.querySelectorAll("li")];
+
+// arrayElements.map((el,key)=>{
+
+//     if (el.textContent.indexOf("1") != (-1)) {
+//         el.textContent = `[ ${el.textContent} ]`;
+//     }
+// });
 let tmp = 0;
 
 
@@ -45,5 +55,63 @@ function mudaCor() {
    tmp = setTimeout(mudaCor, 1000);
 
 }
+function alteraBanner1 (){
+    
+    let nr = Math.round(Math.random() *3 )
+    const img1 = document.querySelector(".l-d > img")
+    const img2 = document.querySelector(".l-e > img")
 
+    img1.src = `./img/banner-lateral-1.png`;
+    img2.src = `./img/banner-lateral-2.png`;
+    setTimeout(alteraBanner2, 500);
+}
+function alteraBanner2 (){
+    
+    let nr = Math.round(Math.random() *3 )
+    const img1 = document.querySelector(".l-d > img")
+    const img2 = document.querySelector(".l-e > img")
 
+    img1.src = `./img/banner-lateral-2.png`;
+    img2.src = `./img/banner-lateral-1.png`;
+    setTimeout(alteraBanner3, 500);
+}
+function alteraBanner3 (){
+    
+    let nr = Math.round(Math.random() *3 )
+    const img1 = document.querySelector(".l-d > img")
+    const img2 = document.querySelector(".l-e > img")
+
+    img1.src = `./img/banner-lateral-1.png`;
+    img2.src = `./img/banner-lateral-2.png`;
+    setTimeout(alteraBanner1, 500);
+}
+
+alteraBanner1();
+const btnOnOff = document.querySelector(".conteudo button");
+
+btnOnOff.addEventListener("click", ()=>{
+    const imgLampada = document.querySelector(".conteudo img");
+    if(btnOnOff.textContent == "LIGAR"){
+        btnOnOff.textContent = "DESLIGAR";
+        imgLampada.src = "./img/pic_bulbon.gif";
+    }else{
+        btnOnOff.textContent = "LIGAR";
+        imgLampada.src = "./img/pic_bulboff.gif";
+    }
+});
+/*
+function turnInOff(){
+
+    const imgLampada = document.querySelector(".conteudo img");
+    const btnOnOff = document.querySelector(".conteudo button");
+
+    if(btnOnOff.textContent == "LIGAR"){
+        btnOnOff.textContent = "DESLIGAR";
+        imgLampada.src = "./img/pic_bulbon.gif";
+    }
+    else{
+        btnOnOff.textContent = "LIGAR";
+        imgLampada.src = "./img/pic_bulboff.gif";
+    }
+}
+*/
